@@ -3,9 +3,9 @@
 #include "Arduino.h"
 
 //--------------------------------------
+
 HardwareTimer *MyTimer = new HardwareTimer(TIM2);  // Wahl des Timer
 
-bool pinStatus = false;    // Zustand des Ausgangspins
 //-------------------------------------
 
 
@@ -20,7 +20,7 @@ MyTimer->attachInterrupt(TimerCallback); // Callback-Funktion zuweisen
 
 void TimerCallback() 
 {
-  // Schalte den Pin auf LOW nach 10 Sekunden
+  // Schalte den Pin auf LOW nach 5 Sekunden
   digitalWrite(LED_BLUE_MAGNET_LOCK, LOW);
 
   // Stoppe den Timer, bis der Taster erneut gedrückt wird

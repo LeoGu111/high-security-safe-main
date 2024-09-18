@@ -6,7 +6,9 @@
 #define LED_GREEN_LOCK_1_PIN PC8
 #define LED_GREEN_LOCK_2_PIN PC6
 #define LED_GREEN_LOCK_3_PIN PC5
-#define LED_BLUE_MAGNET_LOCK PC4
+
+//MAGNET_LOCK
+#define MAGNET_LOCK PC4
 
 // Pins for Testing buttons
 #define BTN_1_PIN PC0

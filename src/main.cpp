@@ -63,7 +63,7 @@ void led_setup()
   pinMode(LED_GREEN_LOCK_1_PIN, OUTPUT);
   pinMode(LED_GREEN_LOCK_2_PIN, OUTPUT);
   pinMode(LED_GREEN_LOCK_3_PIN, OUTPUT);
-  pinMode(LED_BLUE_MAGNET_LOCK, OUTPUT);
+  pinMode(MAGNET_LOCK, OUTPUT);
 }
 
 void button_setup()
@@ -95,9 +95,8 @@ void check_buttons()
 
   if (LOW == digitalRead(BTN_4_PIN))
   {
-    //state_machine(INPUT_REFUSED);
+    state_machine(INPUT_REFUSED);
     state_machine(OPEN_DOOR);   
-    //state_machine(CLOSE_DOOR);
   }
 }
 
@@ -137,6 +136,8 @@ void check_states()
     break;
   case SAFE_OPEN: //neues Case
     openDoor();
+    state_machine(CLOSE_DOOR);
+
     printf("open door");
   default:
     break;
