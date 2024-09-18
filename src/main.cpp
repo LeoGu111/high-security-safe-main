@@ -95,9 +95,9 @@ void check_buttons()
 
   if (LOW == digitalRead(BTN_4_PIN))
   {
-    state_machine(INPUT_REFUSED);
+    //state_machine(INPUT_REFUSED);
     state_machine(OPEN_DOOR);   
-    state_machine(CLOSE_DOOR);
+    //state_machine(CLOSE_DOOR);
   }
 }
 
@@ -133,10 +133,11 @@ void check_states()
     digitalWrite(LED_GREEN_LOCK_1_PIN, HIGH);
     digitalWrite(LED_GREEN_LOCK_2_PIN, HIGH);
     digitalWrite(LED_GREEN_LOCK_3_PIN, HIGH);
+    printf("Level 3");
     break;
-  case OPEN_DOOR:
+  case OPEN_DOOR: //neues Case
     openDoor();
-
+    printf("open door");
   default:
     break;
   }
