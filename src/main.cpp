@@ -136,8 +136,8 @@ void check_states()
     break;
   case SAFE_OPEN: //neues Case
     openDoor();
+    
     state_machine(CLOSE_DOOR);
-
     printf("open door");
   default:
     break;
