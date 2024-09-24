@@ -21,7 +21,7 @@ MyTimer->attachInterrupt(TimerCallback); // Callback-Funktion zuweisen
 void TimerCallback() 
 {
   // Schalte den Pin auf LOW nach 5 Sekunden
-  digitalWrite(LED_BLUE_MAGNET_LOCK, LOW);
+  digitalWrite(MAGNET_LOCK, LOW);
 
   // Stoppe den Timer, bis der Taster erneut gedrückt wird
   MyTimer->pause();
@@ -30,7 +30,7 @@ void TimerCallback()
 void openDoor()
 {
   // Taster wurde gedrückt, also schalte den Pin auf HIGH
-  digitalWrite(LED_BLUE_MAGNET_LOCK, HIGH);
+  digitalWrite(MAGNET_LOCK, HIGH);
 
   // Starte den Timer, um nach 10 Sekunden den Pin wieder auszuschalten
   MyTimer->resume();
