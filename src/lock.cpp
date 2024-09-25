@@ -11,10 +11,10 @@ HardwareTimer *MyTimer = new HardwareTimer(TIM2);  // Wahl des Timer
 
 void setup_TIM2()
 {
-// Konfiguriere den Timer, aber starte ihn noch nicht
-MyTimer->setOverflow(5000000, MICROSEC_FORMAT);  // Timer für 5 Sekunden
+  // Konfiguriere den Timer, aber starte ihn noch nicht
+  MyTimer->setOverflow(5000000, MICROSEC_FORMAT);  // Timer für 5 Sekunden
 
-MyTimer->attachInterrupt(TimerCallback); // Callback-Funktion zuweisen
+  MyTimer->attachInterrupt(TimerCallback); // Callback-Funktion zuweisen
 }
 
 
@@ -32,7 +32,7 @@ void openDoor()
   // Taster wurde gedrückt, also schalte den Pin auf HIGH
   digitalWrite(MAGNET_LOCK, HIGH);
 
-  // Starte den Timer, um nach 10 Sekunden den Pin wieder auszuschalten
+  // Starte den Timer, um nach 5 Sekunden den Pin wieder auszuschalten
   MyTimer->resume();
 }
 
